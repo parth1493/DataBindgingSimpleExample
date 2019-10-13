@@ -15,17 +15,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Student student = new Student("Parth","parth1493@gmail.com");
         mActivityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
-        mActivityMainBinding.setStudent(getCurrentStudent());
+        mActivityMainBinding.setStudent(student);
 
         mEventHandlerDatabinding = new EventHandlerDatabinding(this);
         mActivityMainBinding.setEventHandler(mEventHandlerDatabinding);
     }
 
-    private Student getCurrentStudent(){
-        Student student = new Student();
-        student.setName("Parth");
-        student.setEmail("parth1493@gmail.com");
-        return student;
-    }
+
 }

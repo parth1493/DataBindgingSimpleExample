@@ -24,8 +24,10 @@ public class SecondActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Student student = new Student("Parth","parth1493@gmail.com");
         mActivitySecondBinding = DataBindingUtil.setContentView(this,R.layout.activity_second);
-        mActivitySecondBinding.setStudent(getCurrentStudent());
+        mActivitySecondBinding.setStudent(student);
+        mActivitySecondBinding.executePendingBindings();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -37,11 +39,5 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
-    private Student getCurrentStudent(){
-        Student student = new Student();
-        student.setName("Parth");
-        student.setEmail("parth1493@gmail.com");
-        return student;
-    }
 
 }

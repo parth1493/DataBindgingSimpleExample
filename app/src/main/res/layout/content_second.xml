@@ -31,5 +31,12 @@
                 android:layout_height="wrap_content"
                 android:text="@{student.email}" />
 
+            <EditText
+                android:id="@+id/edit_text"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={student.email}" />
+
     </LinearLayout>
 </layout>
